@@ -1,5 +1,7 @@
 package com.zhangxin.wechat.accesstoken;
 
+import com.zhangxin.wechat.Constant;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +14,10 @@ public class AccessTokenServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        TokenThread.appId = getInitParameter("appid");  //获取servlet初始参数appid和appsecret
-        TokenThread.appSecret = getInitParameter("appsecret");
-        System.out.println("appid:"+ TokenThread.appId);
-        System.out.println("appSecret:"+ TokenThread.appSecret);
+        Constant.AppId = getInitParameter("appid");  //获取servlet初始参数appid和appsecret
+        Constant.AppSecret = getInitParameter("appsecret");
+        System.out.println("appid:"+ Constant.AppId);
+        System.out.println("appSecret:"+ Constant.AppSecret);
         new Thread(new TokenThread()).start(); //启动进程
     }
 

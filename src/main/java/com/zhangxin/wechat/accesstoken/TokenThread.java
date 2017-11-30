@@ -2,12 +2,11 @@ package com.zhangxin.wechat.accesstoken;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.zhangxin.wechat.Constant;
 import com.zhangxin.wechat.httpTool.HttpWalker;
+import com.zhangxin.wechat.pojo.AccessToken;
 
 public class TokenThread implements Runnable {
-    public static String appId = "wxa5b010b6d65fce2d";
-    //注意是静态的
-    public static String appSecret = "21ee21da36f3195a5acbe6f125b517f9";
     public static AccessToken accessToken = null;
 
     @Override
@@ -41,13 +40,13 @@ public class TokenThread implements Runnable {
      * @return
      */
     private AccessToken getAccessToken() {
-        String url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s", this.appId, this.appSecret);
+        String url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s", Constant.AppId, Constant.AppSecret);
         String result = HttpWalker.visit(url).setHeard().get().getResponseStr();
         System.out.println(result);
         JSONObject json = JSON.parseObject(result);
         AccessToken token = new AccessToken();
         token.setAccessToken(json.getString("access_token"));
-        token.setExpiresin(json.getInteger("expires_in"));
+        token.setExpiresIn(json.getInteger("expires_in"));
         return token;
 
       /* NetWorkHelper netHelper = new NetWorkHelper();
@@ -57,7 +56,7 @@ public class TokenThread implements Runnable {
         JSONObject json = JSON.parseObject(result);
         AccessToken token = new AccessToken();
        token.setAccessToken(json.getString("access_token"));
-        token.setExpiresin(json.getInteger("expires_in"));
+        token.setExpiresIn(json.getInteger("expires_in"));
         return token;*/
     }
 }

@@ -2,10 +2,9 @@ package com.zhangxin.wechat.util;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.zhangxin.wechat.accesstoken.AccessToken;
+import com.zhangxin.wechat.pojo.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
@@ -17,7 +16,6 @@ import java.net.URL;
 /**
  * 类名: CommonUtil </br>
  * 描述: 通用工具类  </br>
- * 开发人员： souvc </br>
  * 创建时间：  2015-11-27 </br>
  * 发布版本：V1.0  </br>
  */
@@ -104,7 +102,7 @@ public class CommonUtil {
             try {
                 token = new AccessToken();
                 token.setAccessToken(jsonObject.getString("access_token"));
-                token.setExpiresin(jsonObject.getInteger("expires_in"));
+                token.setExpiresIn(jsonObject.getInteger("expires_in"));
             } catch (JSONException e) {
                 token = null;
                 // 获取token失败

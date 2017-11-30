@@ -1,25 +1,23 @@
 package com.zhangxin.wechat.pojo;
 
 /**
- * 类名: AccessToken </br>
- * 包名： com.souvc.weixin.pojo
- * 描述: 微信通用接口凭证  </br>
- * 开发人员：souvc </br>
- * 创建时间：  2015-12-1 </br>
- * 发布版本：V1.0  </br>
+ * 描述: 微信通用接口凭证
+ * 开发人员：zx
+ * 创建时间：2017-11-30
+ * 发布版本：V1.0
  */
 public class AccessToken {
     // 获取到的凭证
-    private String token;
+    private String accessToken;
     // 凭证有效时间，单位：秒
     private int expiresIn;
 
-    public String getToken() {
-        return token;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public int getExpiresIn() {

@@ -8,12 +8,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * 类名: CoreService </br>
  * 描述: 核心服务类 </br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-9-30 </br>
- * 发布版本：V1.0  </br>
- * openid = o-poNs0ILGqcqWEQ0a7GdW5gRHgQ
  */
 public class CoreService {
     /**

@@ -18,11 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 类名: MessageUtil </br>
  * 描述: 消息处理工具类</br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-9-30 </br>
- * 发布版本：V1.0  </br>
  */
 public class MessageUtil {
     // 请求消息类型：文本

@@ -1,14 +1,9 @@
 package com.zhangxin.wechat.message.req;
 
 /**
- * 类名: BaseMessage </br>
  * 描述: 请求消息的基类 </br>
- * 开发人员： souvc</br>
- * 创建时间：  Sep 29, 2015 </br>
- * 发布版本：V1.0  </br>
  */
 public class BaseMessage {
-
     // 开发者微信号
     private String ToUserName;
     // 发送方帐号（一个OpenID）

@@ -1,5 +1,6 @@
 package com.zhangxin.wechat.main;
 
+import com.zhangxin.wechat.Constant;
 import com.zhangxin.wechat.menu.Button;
 import com.zhangxin.wechat.menu.CommonButton;
 import com.zhangxin.wechat.menu.ComplexButton;
@@ -10,30 +11,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 类名: MenuManager </br>
- * 包名： com.souvc.weixin.main
  * 描述:菜单管理器类 </br>
- * 开发人员： liuhf </br>
- * 创建时间：  2015-12-1 </br>
- * 发布版本：V1.0  </br>
  */
 public class MenuManager {
     private static Logger log = LoggerFactory.getLogger(MenuManager.class);
 
     public static void main(String[] args) {
-        // 第三方用户唯一凭证
-        //String appId = "wx3aaad7a447068cea";
-        String appId = "wxa5b010b6d65fce2d";
-        // 第三方用户唯一凭证密钥
-        //String appSecret = "2f92103103766aba21d7ebbf4e13805d";
-        String appSecret = "21ee21da36f3195a5acbe6f125b517f9";
-
         // 调用接口获取access_token
-        AccessToken at = WeChatUtil.getAccessToken(appId, appSecret);
+        AccessToken at = WeChatUtil.getAccessToken(Constant.AppId, Constant.AppSecret);
 
         if (null != at) {
             // 调用接口创建菜单
-            int result = WeChatUtil.createMenu(getMenu(), at.getToken());
+            int result = WeChatUtil.createMenu(getMenu(), at.getAccessToken());
 
             // 判断菜单创建结果
             if (0 == result)

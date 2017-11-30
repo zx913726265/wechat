@@ -1,11 +1,7 @@
 package com.zhangxin.wechat.message.resp;
 
 /**
- * 类名: Music </br>
  * 描述: 音乐model </br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-9-30 </br>
- * 发布版本：V1.0  </br>
  */
 public class Music {
     // 音乐标题

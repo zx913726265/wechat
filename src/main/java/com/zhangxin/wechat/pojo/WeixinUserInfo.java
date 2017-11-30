@@ -1,11 +1,7 @@
-package com.zhangxin.wechat.entity;
+package com.zhangxin.wechat.pojo;
 
 /**
- * 类名: WeixinUserInfo </br>
  * 描述: 微信用户的基本信息  </br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-11-27 </br>
- * 发布版本：V1.0  </br>
  */
 public class WeixinUserInfo {
     // 用户的标识

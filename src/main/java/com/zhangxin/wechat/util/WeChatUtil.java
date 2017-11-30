@@ -18,12 +18,7 @@ import java.net.ConnectException;
 import java.net.URL;
 
 /**
- * 类名: WeixinUtil </br>
- * 包名： com.souvc.weixin.util
- * 描述: 公众平台通用接口工具类 </br>
- * 开发人员： souvc  </br>
- * 创建时间：  2015-12-1 </br>
- * 发布版本：V1.0  </br>
+ * 描述: 公众平台通用接口工具类
  */
 public class WeChatUtil {
 
@@ -78,7 +73,7 @@ public class WeChatUtil {
             System.out.println(jsonObject);
             try {
                 accessToken = new AccessToken();
-                accessToken.setToken(jsonObject.getString("access_token"));
+                accessToken.setAccessToken(jsonObject.getString("access_token"));
                 accessToken.setExpiresIn(jsonObject.getInteger("expires_in"));
             } catch (JSONException e) {
                 accessToken = null;

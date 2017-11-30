@@ -1,7 +1,7 @@
 package com.zhangxin.wechat;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zhangxin.wechat.entity.WeixinUserInfo;
+import com.zhangxin.wechat.pojo.WeixinUserInfo;
 import com.zhangxin.wechat.httpTool.NetWorkHelper;
 import com.zhangxin.wechat.util.CommonUtil;
 import org.slf4j.Logger;

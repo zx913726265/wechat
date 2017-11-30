@@ -4,10 +4,11 @@ import com.zhangxin.wechat.service.CoreService;
 import com.zhangxin.wechat.util.SignUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,15 +25,16 @@ import java.io.PrintWriter;
  * 创建时间：2017-11-30
  * 发布版本：V1.0
  */
+@ComponentScan(value = {"com.zhangxin.wechat.controller"})
 @RestController
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class WechatApplication implements EmbeddedServletContainerCustomizer {
 
 	public static void main(String[] args) {
 		try {
 			SpringApplication.run(WechatApplication.class, args);
 			System.out.println("wechat start success！！");
-			//((ConfigurableApplicationContext) appctx).close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,15 +48,7 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 	/**
 	 * 确认请求来自微信服务器
 	 */
-	@RequestMapping("")
-	public String test(){
-		return "OK";
-	}
-
-	/**
-	 * 确认请求来自微信服务器
-	 */
-	@RequestMapping(value = "/wechat",method = RequestMethod.GET)
+	@RequestMapping(value = "/wechat", method = RequestMethod.GET)
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 微信加密签名
@@ -71,7 +65,7 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 			out.print(echostr);
 		}
 		out.close();
-		out = null;
+		//out = null;
 	}
 
 	/**

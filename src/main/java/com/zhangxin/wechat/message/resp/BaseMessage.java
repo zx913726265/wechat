@@ -1,11 +1,7 @@
 package com.zhangxin.wechat.message.resp;
 
 /**
- * 类名: BaseMessage </br>
  * 描述: 消息基类（公众帐号 -> 普通用户） </br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-9-30 </br>
- * 发布版本：V1.0  </br>
  */
 public class BaseMessage {
     // 接收方帐号（收到的OpenID）

@@ -3,11 +3,7 @@ package com.zhangxin.wechat.message.req;
 import com.zhangxin.wechat.message.resp.BaseMessage;
 
 /**
- * 类名: TextMessage </br>
  * 描述: 请求消息之文本消息 </br>
- * 开发人员： souvc </br>
- * 创建时间：  Sep 29, 2015 </br>
- * 发布版本：V1.0  </br>
  */
 
 public class TextMessage extends BaseMessage {

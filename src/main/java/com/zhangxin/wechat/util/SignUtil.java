@@ -1,26 +1,19 @@
 package com.zhangxin.wechat.util;
 
+import com.zhangxin.wechat.Constant;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /**
- * 类名: SignUtil </br>
  * 描述: 检验signature 工具类 </br>
- * 开发人员： souvc </br>
- * 创建时间：  2015-9-29 </br>
- * 发布版本：V1.0  </br>
  */
 public class SignUtil {
 
-    // 与接口配置信息中的Token要一致
-    private static String token = "zhangxin";
 
     /**
-     * 方法名：checkSignature</br>
      * 详述：验证签名</br>
-     * 开发人员：souvc</br>
-     * 创建时间：2015-9-29  </br>
      * @param signature
      * @param timestamp
      * @param nonce
@@ -29,7 +22,7 @@ public class SignUtil {
      */
     public static boolean checkSignature(String signature, String timestamp,String nonce) {
         // 1.将token、timestamp、nonce三个参数进行字典序排序
-        String[] arr = new String[] { token, timestamp, nonce };
+        String[] arr = new String[] {Constant.Token, timestamp, nonce };
         Arrays.sort(arr);
 
         // 2. 将三个参数字符串拼接成一个字符串进行sha1加密

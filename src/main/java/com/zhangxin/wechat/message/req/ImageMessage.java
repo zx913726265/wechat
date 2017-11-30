@@ -3,11 +3,7 @@ package com.zhangxin.wechat.message.req;
 import com.zhangxin.wechat.message.resp.BaseMessage;
 
 /**
- * 类名: ImageMessage </br>
  * 描述: 请求消息之图片消息 </br>
- * 开发人员： souvc </br>
- * 创建时间：  Sep 29, 2015 </br>
- * 发布版本：V1.0  </br>
  */
 public class ImageMessage extends BaseMessage {
     // 图片链接
