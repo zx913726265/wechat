@@ -14,7 +14,7 @@ public class Test {
     /**
      * 获取用户信息
      * @param accessToken 接口访问凭证
-     * @param openId      用户标识1
+     * @param openId      用户标识
      * @return WeixinUserInfo
      */
     public static WeixinUserInfo getUserInfo(String accessToken, String openId) {
