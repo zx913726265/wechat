@@ -6,7 +6,6 @@ import com.zhangxin.wechat.pojo.WeixinOauth2Token;
 import com.zhangxin.wechat.util.AdvancedUtil;
 import com.zhangxin.wechat.util.CommonUtil;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  * 描述: 来接收微信服务器传来信息
@@ -25,23 +23,8 @@ import java.io.UnsupportedEncodingException;
  * 创建时间：2017-11-30
  * 发布版本：V1.0
  */
-//@RestController
-//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @Controller
-@EnableAutoConfiguration
 public class OAuthController {
-
-	@RequestMapping("/index")
-	public ModelAndView index(){
-		ModelMap model = new ModelMap();
-		model.addAttribute("name", "Spring Boot");
-		return new ModelAndView("index", model);
-	}
-
-	@RequestMapping("")
-	public String test() {
-		return "OK";
-	}
 
 	/**
 	 * 授权后的回调请求处理
@@ -51,8 +34,8 @@ public class OAuthController {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	@RequestMapping("oauth")
-	public void OAuth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@RequestMapping("/zhangxin")
+	public String OAuth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 
@@ -61,7 +44,7 @@ public class OAuthController {
 		String state = request.getParameter("state");
 
 		// 用户同意授权
-		if (!"authdeny".equals(code)) {
+		/*if (!"authdeny".equals(code)) {
 			// 获取网页授权access_token
 			WeixinOauth2Token weixinOauth2Token = AdvancedUtil.getOauth2AccessToken(Constant.AppId, Constant.AppSecret, code);
 			// 网页授权接口访问凭证
@@ -74,13 +57,14 @@ public class OAuthController {
 			// 设置要传递的参数
 			request.setAttribute("snsUserInfo", snsUserInfo);
 			request.setAttribute("state", state);
-		}
-		// 跳转到index.jsp TODO
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		}*/
+		// 跳转到index.jsp
+		return "index";
 	}
 
 	public static void main(String[] args) {
-		String source="http://chiyan.duapp.com/oauthServlet";
+		//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa5b010b6d65fce2d&redirect_uri=http%3A%2F%2Fpeifubao.iask.in%2Foauth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
+		String source="http://peifubao.iask.in/oauth";
 		System.out.println(CommonUtil.urlEncodeUTF8(source));
 	}
 
