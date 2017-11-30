@@ -13,11 +13,20 @@
 
 	<repositories>
 		<repository>
-			<id>Iflytek repository</id>
-			<name>iflytek-repository</name>
-			<url>http://172.16.1.22:8081/nexus/content/groups/public</url>
+			<id>aliyun repository</id>
+			<name>aliyun-repository</name>
+			<!--<url>http://172.16.1.22:8081/nexus/content/groups/public</url>-->
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
 		</repository>
 	</repositories>
+	<!-- 设定插件仓库 -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-repos</id>
+			<name>aliyun Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

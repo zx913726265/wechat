@@ -30,8 +30,8 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 
 	public static void main(String[] args) {
 		try {
-			ApplicationContext appctx = SpringApplication.run(WechatApplication.class, args);
-			System.out.println("appctx.getBeanDefinitionCount=" + appctx.getBeanDefinitionCount());
+			SpringApplication.run(WechatApplication.class, args);
+			System.out.println("wechat start success！！");
 			//((ConfigurableApplicationContext) appctx).close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -46,8 +46,16 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 	/**
 	 * 确认请求来自微信服务器
 	 */
-	@RequestMapping("/wechat")
-	public String doGet(HttpServletRequest request, HttpServletResponse response)
+	@RequestMapping("")
+	public String test(){
+		return "OK";
+	}
+
+	/**
+	 * 确认请求来自微信服务器
+	 */
+	@RequestMapping(value = "/wechat",method = RequestMethod.GET)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 微信加密签名
 		String signature = request.getParameter("signature");
@@ -61,11 +69,9 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 		// 通过检验signature对请求进行校验，若校验成功则原样返回echostr，表示接入成功，否则接入失败
 		if (SignUtil.checkSignature(signature, timestamp, nonce)) {
 			out.print(echostr);
-			return "echostr";
 		}
 		out.close();
 		out = null;
-		return "ok";
 	}
 
 	/**
