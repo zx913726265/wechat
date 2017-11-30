@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Class-Path: hibernate-validator-5.3.6.Final.jar spring-boot-1.5.9.RELE
+ ASE.jar spring-boot-autoconfigure-1.5.9.RELEASE.jar tomcat-annotation
+ s-api-8.5.23.jar spring-boot-starter-tomcat-1.5.9.RELEASE.jar jackson
+ -annotations-2.8.0.jar log4j-over-slf4j-1.7.25.jar spring-boot-starte
+ r-web-1.5.9.RELEASE.jar spring-context-4.3.13.RELEASE.jar jackson-cor
+ e-2.8.10.jar jcl-over-slf4j-1.7.25.jar snakeyaml-1.17.jar slf4j-api-1
+ .7.25.jar spring-aop-4.3.13.RELEASE.jar classmate-1.3.4.jar tomcat-em
+ bed-websocket-8.5.23.jar jul-to-slf4j-1.7.25.jar validation-api-1.1.0
+ .Final.jar spring-expression-4.3.13.RELEASE.jar jboss-logging-3.3.1.F
+ inal.jar spring-boot-starter-logging-1.5.9.RELEASE.jar spring-beans-4
+ .3.13.RELEASE.jar tomcat-embed-el-8.5.23.jar spring-core-4.3.13.RELEA
+ SE.jar jackson-databind-2.8.10.jar tomcat-embed-core-8.5.23.jar logba
+ ck-classic-1.1.11.jar spring-web-4.3.13.RELEASE.jar logback-core-1.1.
+ 11.jar spring-boot-starter-1.5.9.RELEASE.jar spring-webmvc-4.3.13.REL
+ EASE.jar
+Main-Class: com.zhangxin.wechat.WechatApplication
+
