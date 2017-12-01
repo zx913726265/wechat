@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>OAuth2.0网页授权</title>
-    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <meta name="viewport" content="width=device-width,user-scalable=0"/>
     <style type="text/css">
         * {
             margin: 0;

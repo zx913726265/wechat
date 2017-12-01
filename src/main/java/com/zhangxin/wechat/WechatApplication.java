@@ -1,9 +1,6 @@
 package com.zhangxin.wechat;
 
-import com.zhangxin.wechat.pojo.SNSUserInfo;
-import com.zhangxin.wechat.pojo.WeixinOauth2Token;
 import com.zhangxin.wechat.service.CoreService;
-import com.zhangxin.wechat.util.AdvancedUtil;
 import com.zhangxin.wechat.util.SignUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,11 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,7 +42,7 @@ public class WechatApplication implements EmbeddedServletContainerCustomizer {
 		container.setPort(80);//设置端口号
 	}
 
-	@RequestMapping("")
+	@RequestMapping("/")
 	public String test() {
 		return "SUCCESS";
 	}

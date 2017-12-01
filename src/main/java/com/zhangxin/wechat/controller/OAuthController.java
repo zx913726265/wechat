@@ -44,27 +44,30 @@ public class OAuthController {
 		String state = request.getParameter("state");
 
 		// 用户同意授权
-		/*if (!"authdeny".equals(code)) {
+		if (!"authdeny".equals(code)) {
 			// 获取网页授权access_token
 			WeixinOauth2Token weixinOauth2Token = AdvancedUtil.getOauth2AccessToken(Constant.AppId, Constant.AppSecret, code);
-			// 网页授权接口访问凭证
-			String accessToken = weixinOauth2Token.getAccessToken();
-			// 用户标识
-			String openId = weixinOauth2Token.getOpenId();
-			// 获取用户信息
-			SNSUserInfo snsUserInfo = AdvancedUtil.getSNSUserInfo(accessToken, openId);
+			if (weixinOauth2Token != null){
+				// 网页授权接口访问凭证
+				String accessToken = weixinOauth2Token.getAccessToken();
+				// 用户标识
+				String openId = weixinOauth2Token.getOpenId();
+				// 获取用户信息
+				SNSUserInfo snsUserInfo = AdvancedUtil.getSNSUserInfo(accessToken, openId);
 
-			// 设置要传递的参数
-			request.setAttribute("snsUserInfo", snsUserInfo);
-			request.setAttribute("state", state);
-		}*/
+				// 设置要传递的参数
+				request.setAttribute("snsUserInfo", snsUserInfo);
+				request.setAttribute("state", state);
+				return "index";
+			}
+		}
 		// 跳转到index.jsp
 		return "index";
 	}
 
 	public static void main(String[] args) {
 		//https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa5b010b6d65fce2d&redirect_uri=http%3A%2F%2Fpeifubao.iask.in%2Foauth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect
-		String source="http://peifubao.iask.in/oauth";
+		String source="http://peifubao.iask.in/zhangxin";
 		System.out.println(CommonUtil.urlEncodeUTF8(source));
 	}
 
